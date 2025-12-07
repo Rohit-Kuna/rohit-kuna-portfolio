@@ -1,8 +1,10 @@
 import Navbar from "#components/NavBar";
+import Welcome from "#components/Welcome";
 const App=()=>{
   return ( 
     <main>
-      < Navbar />
+      <Navbar />
+      <Welcome />
     </main>
   );
 };
