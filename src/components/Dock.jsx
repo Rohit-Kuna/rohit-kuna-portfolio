@@ -78,6 +78,7 @@ const Dock = () => {
                         <button
                             type="button"
                             className="dock-icon"
+                            data-app={id}
                             aria-label={name}
                             data-tooltip-id="dock-tooltip"
                             data-tooltip-content={name}
