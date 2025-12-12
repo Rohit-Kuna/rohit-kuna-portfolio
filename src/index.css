@@ -455,3 +455,50 @@ body {
     }
   }
 }
+
+
+/* .mac-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mac-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mac-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.3);
+  border-radius: 10px;
+}
+
+.mac-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.45);
+}
+
+.mac-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 100, 100, 0.3) transparent;
+} */
+
+.mac-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mac-scrollbar::-webkit-scrollbar-button {
+  height: 0;
+  display: none; /* Removes top/bottom arrows */
+}
+
+.mac-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.mac-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.35);
+  border-radius: 9999px;
+}
+
+.mac-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 120, 120, 0.55);
+}

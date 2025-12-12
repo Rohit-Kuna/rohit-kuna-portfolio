@@ -13,17 +13,17 @@ const WindowWrapper = (Component, windowKey) => {
     const ref = useRef(null);
 
     // ---- DRAGGABLE ----
-    useGSAP(() => {
-      const el = ref.current;
-      if (!el) return;
+useGSAP(() => {
+  const el = ref.current;
+  if (!el) return;
 
-      const [instance] = Draggable.create(el, {
-        onPress: () => focusWindow(windowKey),
-        bounds: window,
-      });
+  const [instance] = Draggable.create(el, {
+    onPress: () => focusWindow(windowKey),
+    bounds: window,
+  });
 
-      return () => instance.kill();
-    }, []);
+  return () => instance.kill();
+}, []);
 
     // ---- OPEN ANIMATION ----
     useGSAP(() => {
@@ -49,31 +49,31 @@ const WindowWrapper = (Component, windowKey) => {
 
 
     // ---- CLICK OUTSIDE TO CLOSE ALL WINDOWS ----
-    useLayoutEffect(() => {
-      if (!isOpen) return;
+    // useLayoutEffect(() => {
+    //   if (!isOpen) return;
 
-      const el = ref.current;
-      if (!el) return;
+    //   const el = ref.current;
+    //   if (!el) return;
 
-      const handleClickOutside = (e) => {
-        // Ignore clicks inside the window
-        if (el.contains(e.target)) return;
+    //   const handleClickOutside = (e) => {
+    //     // Ignore clicks inside the window
+    //     if (el.contains(e.target)) return;
 
-        // Ignore clicks on dock/app icons
-        if (e.target.closest("[data-app]")) return;
+    //     // Ignore clicks on dock/app icons
+    //     if (e.target.closest("[data-app]")) return;
 
-        // Close ALL windows
-        const store = useWindowStore.getState();
-        Object.keys(store.windows).forEach((key) => {
-          store.closeWindow(key);
-        });
-      };
+    //     // Close ALL windows
+    //     const store = useWindowStore.getState();
+    //     Object.keys(store.windows).forEach((key) => {
+    //       store.closeWindow(key);
+    //     });
+    //   };
 
-      document.addEventListener("mousedown", handleClickOutside);
+    //   document.addEventListener("mousedown", handleClickOutside);
 
-      return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
-    }, [isOpen]);
+    //   return () =>
+    //     document.removeEventListener("mousedown", handleClickOutside);
+    // }, [isOpen]);
 
 
     return (
@@ -81,7 +81,7 @@ const WindowWrapper = (Component, windowKey) => {
         id={windowKey}
         ref={ref}
         style={{ zIndex }}
-        className="absolute"
+        className="absolute max-h-[70vh] overflow-y-auto mac-scrollbar"
       >
         <Component {...props} />
       </section>
