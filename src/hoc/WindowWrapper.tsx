@@ -47,35 +47,6 @@ const WindowWrapper = (Component, windowKey) => {
       el.style.display = isOpen ? "block" : "none";
     }, [isOpen]);
 
-
-    // ---- CLICK OUTSIDE TO CLOSE ALL WINDOWS ----
-    // useLayoutEffect(() => {
-    //   if (!isOpen) return;
-
-    //   const el = ref.current;
-    //   if (!el) return;
-
-    //   const handleClickOutside = (e) => {
-    //     // Ignore clicks inside the window
-    //     if (el.contains(e.target)) return;
-
-    //     // Ignore clicks on dock/app icons
-    //     if (e.target.closest("[data-app]")) return;
-
-    //     // Close ALL windows
-    //     const store = useWindowStore.getState();
-    //     Object.keys(store.windows).forEach((key) => {
-    //       store.closeWindow(key);
-    //     });
-    //   };
-
-    //   document.addEventListener("mousedown", handleClickOutside);
-
-    //   return () =>
-    //     document.removeEventListener("mousedown", handleClickOutside);
-    // }, [isOpen]);
-
-
     return (
       <>
         <section
