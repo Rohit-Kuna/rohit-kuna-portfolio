@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    /* ---------- Target & Environment ---------- */
+    "target": "ES2020",
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "jsx": "react-jsx",
+
+    /* ---------- Module System ---------- */
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+
+    /* ---------- Type Safety ---------- */
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    /* ---------- JS → TS Migration ---------- */
+    "allowJs": true,
+    "checkJs": false,
+
+    /* ---------- Interop & Imports ---------- */
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+
+    /* ---------- Build Behavior ---------- */
+    "isolatedModules": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+
+    /* ---------- Path Aliases ---------- */
+    "baseUrl": ".",
+    "paths": {
+      "#*": ["src/*"]
+    },
+
+    /* ---------- Quality of Life ---------- */
+    "useDefineForClassFields": true,
+
+    /* ---------- Node types (for vite.config.ts) ---------- */
+    "types": ["node"]
+  },
+  "include": ["src", "vite.config.ts"]
+}
