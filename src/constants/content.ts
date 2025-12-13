@@ -1,4 +1,18 @@
-const navLinks = [
+import type {
+  NavLink,
+  NavIcon,
+  DockApp,
+  BlogPost,
+  TechStackCategory,
+  SocialLink,
+  PhotosLink,
+  GalleryItem,
+  Location,
+  FinderNode,
+  WindowKey,
+  WindowState
+} from "#types/contentTypes";
+const navLinks : NavLink[] = [
   {
     id: 1,
     name: "Projects",
@@ -16,7 +30,7 @@ const navLinks = [
   },
 ];
 
-const navIcons = [
+const navIcons : NavIcon[] = [
   {
     id: 1,
     img: "/icons/wifi.svg",
@@ -35,7 +49,7 @@ const navIcons = [
 //   },
 ];
 
-const dockApps = [
+const dockApps: DockApp[] = [
   {
     id: "finder",
     name: "Portfolio", // was "Finder"
@@ -74,7 +88,7 @@ const dockApps = [
   },
 ];
 
-const blogPosts = [
+const blogPosts : BlogPost[] = [
   {
     id: 1,
     date: "Sep 2, 2025",
@@ -99,7 +113,7 @@ const blogPosts = [
   },
 ];
 
-const techStack = [
+const techStack : TechStackCategory[]= [
   {
     category: "Frontend",
     items: ["React.js", "Next.js", "TypeScript"],
@@ -126,7 +140,7 @@ const techStack = [
   },
 ];
 
-const socials = [
+const socials : SocialLink[] = [
   {
     id: 1,
     text: "Github",
@@ -157,7 +171,7 @@ const socials = [
   },
 ];
 
-const photosLinks = [
+const photosLinks : PhotosLink[] = [
   {
     id: 1,
     icon: "/icons/gicon1.svg",
@@ -185,7 +199,7 @@ const photosLinks = [
   },
 ];
 
-const gallery = [
+const gallery : GalleryItem[] = [
   {
     id: 1,
     img: "/images/gal1.png",
@@ -215,7 +229,7 @@ export {
   gallery,
 };
 
-const WORK_LOCATION = {
+const WORK_LOCATION : Location = {
   id: 1,
   type: "work",
   name: "Work",
@@ -383,7 +397,7 @@ const WORK_LOCATION = {
   ],
 };
 
-const ABOUT_LOCATION = {
+const ABOUT_LOCATION : Location = {
   id: 2,
   type: "about",
   name: "About me",
@@ -436,7 +450,7 @@ const ABOUT_LOCATION = {
   ],
 };
 
-const RESUME_LOCATION = {
+const RESUME_LOCATION : Location = {
   id: 3,
   type: "resume",
   name: "Resume",
@@ -455,7 +469,7 @@ const RESUME_LOCATION = {
   ],
 };
 
-const TRASH_LOCATION = {
+const TRASH_LOCATION : Location = {
   id: 4,
   type: "trash",
   name: "Trash",
@@ -488,11 +502,11 @@ export const locations = {
   about: ABOUT_LOCATION,
   resume: RESUME_LOCATION,
   trash: TRASH_LOCATION,
-};
+} satisfies Record<string, Location>;
 
 const INITIAL_Z_INDEX = 1000;
 
-const WINDOW_CONFIG = {
+const WINDOW_CONFIG: Record<WindowKey, WindowState> = {
   finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
@@ -500,7 +514,7 @@ const WINDOW_CONFIG = {
   photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null }
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

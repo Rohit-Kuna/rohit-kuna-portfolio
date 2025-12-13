@@ -1,46 +1,90 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import reactHooks from 'eslint-plugin-react-hooks';
-import reactRefresh from 'eslint-plugin-react-refresh';
-import { defineConfig, globalIgnores } from 'eslint/config';
+import js from "@eslint/js";
+import globals from "globals";
+import reactHooks from "eslint-plugin-react-hooks";
+import reactRefresh from "eslint-plugin-react-refresh";
+import tseslint from "typescript-eslint";
+import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  /* ---------- Global ignores ---------- */
+  globalIgnores(["dist", "node_modules"]),
+
+  /* ---------- JS / JSX ---------- */
   {
-    files: ['**/*.{js,jsx}'],
-    ignores: ['node_modules', 'dist'],
+    files: ["**/*.{js,jsx}"],
 
     extends: [
       js.configs.recommended,
       reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
+      reactRefresh.configs.vite
     ],
 
     languageOptions: {
-      ecmaVersion: 2020,
+      ecmaVersion: "latest",
+      sourceType: "module",
       globals: globals.browser,
       parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
+        ecmaFeatures: { jsx: true }
+      }
     },
 
     rules: {
-      // 🔥 STRICT RULES
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-      'no-undef': 'error', // catch undefined variables like dockRef, toggleApp
-      'no-unused-expressions': 'error',
-      'no-unreachable': 'error',
-      'no-debugger': 'error',
-      'eqeqeq': 'error',
-      'curly': 'error',
-      'no-empty': 'error',
+      "no-unused-vars": ["error", { varsIgnorePattern: "^[A-Z_]" }],
+      "no-undef": "error",
+      "no-unused-expressions": "error",
+      "no-unreachable": "error",
+      "no-debugger": "error",
+      eqeqeq: "error",
+      curly: "error",
+      "no-empty": "error",
 
-      // React / JSX Safety
-      'react/jsx-no-undef': 'error', // undefined component in JSX
-      'react/prop-types': 'off', // don't force PropTypes for JS
-      'react/react-in-jsx-scope': 'off', // React 17+ no need to import React
-    },
+      /* React */
+      "react/jsx-no-undef": "error",
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off"
+    }
   },
+
+  /* ---------- TS / TSX ---------- */
+  {
+    files: ["**/*.{ts,tsx}"],
+
+    extends: [
+      js.configs.recommended,
+      ...tseslint.configs.recommended,
+      reactHooks.configs.flat.recommended,
+      reactRefresh.configs.vite
+    ],
+
+    languageOptions: {
+      parser: tseslint.parser,
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: globals.browser
+    },
+
+    rules: {
+      /* Disable JS rules replaced by TS */
+      "no-unused-vars": "off",
+      "no-undef": "off",
+
+      /* TS equivalents */
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        { argsIgnorePattern: "^_", varsIgnorePattern: "^[A-Z_]" }
+      ],
+
+      /* Safety & correctness */
+      "@typescript-eslint/no-explicit-any": "warn",
+      "@typescript-eslint/consistent-type-imports": "error",
+      "@typescript-eslint/no-non-null-assertion": "warn",
+
+      /* General quality */
+      "no-unused-expressions": "error",
+      "no-unreachable": "error",
+      "no-debugger": "error",
+      eqeqeq: "error",
+      curly: "error"
+    }
+  }
 ]);
