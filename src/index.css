@@ -62,6 +62,11 @@ body {
 }
 
 @layer components {
+  
+  .window-scroll {
+    @apply max-h-[70vh] overflow-y-auto;
+  }
+
   .icon {
     @apply p-1 hover:bg-gray-200 rounded hover:cursor-default;
   }
@@ -456,31 +461,8 @@ body {
   }
 }
 
-
-/* .mac-scrollbar::-webkit-scrollbar {
-  width: 8px;
-}
-
-.mac-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.mac-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(100, 100, 100, 0.3);
-  border-radius: 10px;
-}
-
-.mac-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 100, 100, 0.45);
-}
-
-.mac-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(100, 100, 100, 0.3) transparent;
-} */
-
 .mac-scrollbar::-webkit-scrollbar {
-  width: 8px;
+  width: 4px;
 }
 
 .mac-scrollbar::-webkit-scrollbar-button {
@@ -502,3 +484,19 @@ body {
 .mac-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(120, 120, 120, 0.55);
 }
+
+.terminal-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background: #e5e7eb; /* light terminal white */
+  margin-left: 2px;
+  vertical-align: bottom;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+

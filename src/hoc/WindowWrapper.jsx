@@ -13,17 +13,17 @@ const WindowWrapper = (Component, windowKey) => {
     const ref = useRef(null);
 
     // ---- DRAGGABLE ----
-useGSAP(() => {
-  const el = ref.current;
-  if (!el) return;
+    useGSAP(() => {
+      const el = ref.current;
+      if (!el) return;    
 
-  const [instance] = Draggable.create(el, {
-    onPress: () => focusWindow(windowKey),
-    bounds: window,
-  });
+      const [instance] = Draggable.create(el, {
+        onPress: () => focusWindow(windowKey),
+        bounds: window,
+      });   
 
-  return () => instance.kill();
-}, []);
+      return () => instance.kill();
+    }, []);
 
     // ---- OPEN ANIMATION ----
     useGSAP(() => {
@@ -77,17 +77,20 @@ useGSAP(() => {
 
 
     return (
-      <section
-        id={windowKey}
-        ref={ref}
-        style={{ zIndex }}
-        className="absolute max-h-[70vh] overflow-y-auto mac-scrollbar"
-      >
-        <Component {...props} />
-      </section>
+      <>
+        <section
+          id={windowKey}
+          ref={ref}
+          style={{ zIndex }}
+          className="absolute"
+        >
+          <Component {...props}/>
+        </section>
+      </>
     );
   };
 
+  // React Dev Tools Debugging
   Wrapped.displayName = `WindowWrapper(${
     Component.displayName || Component.name || "Component"
   })`;
