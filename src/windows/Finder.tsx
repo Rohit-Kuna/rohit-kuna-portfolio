@@ -1,17 +1,17 @@
 import WindowControls from "#components/WindowControls";
 import { Search } from "lucide-react";
 import WindowWrapper from "#hoc/WindowWrapper";
-import { locations } from "#constants/content";
+import { locations } from "#content/location.content";
 import useLocationStore from "#store/location";
 import clsx from "clsx";
-import useWindowStore from "#store/window";
+import { useWindowStore }from "#store/window";
+import { WindowKey } from "#types/windows.types";
 import type {
   Location,
   FolderNode,
   FileNode,
   FinderNode,
-  WindowKey
-} from "#types/contentTypes";
+} from "#types/location.types";
 
 /* ------------------------------------------------------------------ */
 /* Finder Component */

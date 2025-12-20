@@ -1,6 +1,6 @@
 import { create } from "zustand";
-import { locations } from "#constants/content";
-import type { Location, NavigableFolder } from "#types/contentTypes";
+import { locations } from "#content/location.content";
+import type { Location, NavigableFolder } from "#types/location.types";
 
 /* ---------- Defaults ---------- */
 

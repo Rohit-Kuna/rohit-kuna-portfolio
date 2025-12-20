@@ -1,23 +1,6 @@
 import { create } from "zustand";
-
-/* --- Window Types --- */
-
-export type WindowKey =
-  | "finder"
-  | "contact"
-  | "resume"
-  | "safari"
-  | "photos"
-  | "terminal"
-  | "txtfile"
-  | "imgfile";
-
-export type WindowState<T = unknown> = {
-  isOpen: boolean;
-  zIndex: number;
-  data: T | null;
-  isMaximized: boolean;
-};
+import { INITIAL_WINDOWS_STATE, INITIAL_Z_INDEX } from "#content/windowsInitial.content";
+import { WindowKey, WindowState } from "#types/windows.types";
 
 export type WindowStore = {
   windows: Record<WindowKey, WindowState>;
@@ -27,21 +10,6 @@ export type WindowStore = {
   closeWindow: (key: WindowKey) => void;
   focusWindow: (key: WindowKey) => void;
   toggleMaximizeWindow: (key: WindowKey) => void;
-};
-
-/* ---------- Constants ---------- */
-
-const INITIAL_Z_INDEX = 1000;
-
-const INITIAL_WINDOWS_STATE: Record<WindowKey, WindowState> = {
-  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false }
 };
 
 /* ---------- Store ---------- */

@@ -11,7 +11,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "#components": resolve(__dirname, "src/components"),
-      "#constants": resolve(__dirname, "src/constants"),
+      "#content": resolve(__dirname, "src/content"),
       "#store": resolve(__dirname, "src/store"),
       "#hoc": resolve(__dirname, "src/hoc"),
       "#windows": resolve(__dirname, "src/windows")

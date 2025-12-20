@@ -1,4 +1,5 @@
-import {useWindowStore, WindowKey} from "#store/window";
+import {useWindowStore} from "#store/window";
+import type { WindowKey } from "#types/windows.types";
 
 /* ---------- Props ---------- */
 

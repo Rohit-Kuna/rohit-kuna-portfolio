@@ -1,5 +1,5 @@
 import WindowControls from "#components/WindowControls";
-import { blogPosts } from "#constants/content";
+import { blogPosts } from "#content/other.content";
 import WindowWrapper from "#hoc/WindowWrapper";
 import {
   ChevronLeft,

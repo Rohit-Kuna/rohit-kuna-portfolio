@@ -1,7 +1,7 @@
 import WindowControls from "#components/WindowControls";
-import useWindowStore from "#store/window";
+import { useWindowStore } from "#store/window";
 import WindowWrapper from "#hoc/WindowWrapper";
-import type { FileNode } from "#types/contentTypes";
+import type { FileNode } from "#types/location.types";
 
 /* ---------- Component ---------- */
 

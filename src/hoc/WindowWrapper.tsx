@@ -4,7 +4,8 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import type { ComponentType, PropsWithChildren } from "react";
-import type { WindowState, WindowStore, WindowKey } from "#store/window";
+import type { WindowState, WindowKey } from "#types/windows.types";
+import type { WindowStore } from "#store/window";
 
 gsap.registerPlugin(Draggable);
 
