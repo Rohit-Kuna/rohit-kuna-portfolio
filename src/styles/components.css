@@ -52,7 +52,7 @@
         }
 
         .maximize {
-            @apply size-3.5 rounded-full bg-[#2acb42];
+            @apply size-3.5 rounded-full bg-[#2acb42] cursor-pointer;
         }
     }
 

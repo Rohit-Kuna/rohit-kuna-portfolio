@@ -10,7 +10,7 @@ type WindowControlsProps = {
 /* ---------- Component ---------- */
 
 const WindowControls = ({ target }: WindowControlsProps) => {
-  const { closeWindow } = useWindowStore();
+  const { closeWindow, toggleMaximizeWindow } = useWindowStore();
 
   return (
     <div id="window-controls">
@@ -22,7 +22,13 @@ const WindowControls = ({ target }: WindowControlsProps) => {
       />
 
       <div className="minimize" />
-      <div className="maximize" />
+
+      <div
+        className="maximize"
+        onClick={() => toggleMaximizeWindow(target)}
+        role="button"
+        aria-label="Maximize window"
+      />
     </div>
   );
 };

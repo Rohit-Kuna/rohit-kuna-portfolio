@@ -115,6 +115,7 @@ export type WindowState<T = unknown> = {
   isOpen: boolean;
   zIndex: number;
   data: T | null;
+  isMaximized: boolean;
 };
 
 export type WindowKey =
@@ -134,6 +135,7 @@ export type WindowStore = {
   openWindow: <T = unknown>(key: WindowKey, data?: T) => void;
   closeWindow: (key: WindowKey) => void;
   focusWindow: (key: WindowKey) => void;
+  toggleMaximizeWindow: (key: WindowKey) => void;
 };
 
 export type NavigableFolder = Location | FolderNode;

@@ -42,6 +42,7 @@ const useWindowStore = create<WindowStore>()(
         if (!win) return;
 
         win.isOpen = false;
+        win.isMaximized = false;
         win.zIndex = INITIAL_Z_INDEX;
         win.data = null;
       }),
@@ -54,7 +55,19 @@ const useWindowStore = create<WindowStore>()(
 
         win.zIndex = state.nextZIndex;
         state.nextZIndex++;
-      })
+      }),
+
+    /* ---------- Maximize / Restore ---------- */
+    toggleMaximizeWindow: (key) =>
+      set((state) => {
+        const win = state.windows[key];
+        if (!win) return;
+
+        win.isMaximized = !win.isMaximized;
+        win.zIndex = state.nextZIndex;
+        state.nextZIndex++;
+      }),
+
   }))
 );
 
