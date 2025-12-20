@@ -1,14 +1,16 @@
 /* ---------- Navigation ---------- */
-
+import type { LucideIcon } from "lucide-react";
 export type NavLink = {
   id: number;
   name: string;
   type: string; // future CMS enum
+  icon: LucideIcon;
 };
 
 export type NavIcon = {
   id: number;
   img: string;
+  icon: LucideIcon;
 };
 
 /* ---------- Dock ---------- */

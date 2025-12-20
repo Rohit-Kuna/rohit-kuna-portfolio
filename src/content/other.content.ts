@@ -8,21 +8,27 @@ import type {
   PhotosLink,
   GalleryItem,
 } from "#types/other.types";
+
+import { Folder, UserCircle, FileText, Wifi, Search, Mail } from "lucide-react";
+
 const navLinks : NavLink[] = [
   {
     id: 1,
     name: "Projects",
     type: "finder",
+    icon: Folder,
   },
   {
     id: 3,
     name: "Contact",
     type: "contact",
+    icon: UserCircle,
   },
   {
     id: 4,
     name: "Resume",
     type: "resume",
+    icon: FileText
   },
 ];
 
@@ -30,14 +36,17 @@ const navIcons : NavIcon[] = [
   {
     id: 1,
     img: "/icons/wifi.svg",
+    icon: Wifi
   },
   {
     id: 2,
     img: "/icons/search.svg",
+    icon: Search,
   },
   {
     id: 3,
     img: "/icons/user.svg",
+    icon: Mail
   },
 //   {
 //     id: 4,
