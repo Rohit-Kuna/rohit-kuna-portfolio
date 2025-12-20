@@ -9,8 +9,6 @@ import type {
   GalleryItem,
   Location,
   FinderNode,
-  WindowKey,
-  WindowState
 } from "#types/contentTypes";
 const navLinks : NavLink[] = [
   {
@@ -504,17 +502,3 @@ export const locations = {
   trash: TRASH_LOCATION,
 } satisfies Record<string, Location>;
 
-const INITIAL_Z_INDEX = 1000;
-
-const WINDOW_CONFIG: Record<WindowKey, WindowState> = {
-  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null, isMaximized: false }
-};
-
-export { INITIAL_Z_INDEX, WINDOW_CONFIG };

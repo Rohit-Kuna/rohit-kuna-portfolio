@@ -1,5 +1,4 @@
-import useWindowStore from "#store/window";
-import type { WindowKey } from "#types/contentTypes";
+import {useWindowStore, WindowKey} from "#store/window";
 
 /* ---------- Props ---------- */
 

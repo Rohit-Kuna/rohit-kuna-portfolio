@@ -1,10 +1,10 @@
-import useWindowStore from "#store/window";
+import { useWindowStore } from "#store/window";
 import { useGSAP } from "@gsap/react";
 import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import type { ComponentType, PropsWithChildren } from "react";
-import type { WindowState, WindowStore, WindowKey } from "#types/contentTypes";
+import type { WindowState, WindowStore, WindowKey } from "#store/window";
 
 gsap.registerPlugin(Draggable);
 

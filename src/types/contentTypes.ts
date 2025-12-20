@@ -109,33 +109,4 @@ export type Location = {
   children: FinderNode[];
 };
 
-/* ---------- Window ---------- */
-
-export type WindowState<T = unknown> = {
-  isOpen: boolean;
-  zIndex: number;
-  data: T | null;
-  isMaximized: boolean;
-};
-
-export type WindowKey =
-  | "finder"
-  | "contact"
-  | "resume"
-  | "safari"
-  | "photos"
-  | "terminal"
-  | "txtfile"
-  | "imgfile";
-
-export type WindowStore = {
-  windows: Record<WindowKey, WindowState>;
-  nextZIndex: number;
-
-  openWindow: <T = unknown>(key: WindowKey, data?: T) => void;
-  closeWindow: (key: WindowKey) => void;
-  focusWindow: (key: WindowKey) => void;
-  toggleMaximizeWindow: (key: WindowKey) => void;
-};
-
 export type NavigableFolder = Location | FolderNode;
