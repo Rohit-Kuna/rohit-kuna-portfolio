@@ -252,48 +252,66 @@
     }
 
     #finder {
-        @apply absolute w-3xl left-40 top-20 shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl;
+  @apply absolute w-3xl left-40 top-20 shadow-2xl drop-shadow-2xl overflow-hidden rounded-xl;
 
-        .sidebar {
-            @apply w-48 bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3;
+  .sidebar {
+    @apply w-48 bg-gray-50 border-r border-gray-200 flex flex-col p-5 space-y-3;
 
-            h3 {
-                @apply text-xs font-medium text-gray-400 mb-1;
-            }
-
-            ul {
-                @apply space-y-1;
-
-                .active {
-                    @apply bg-blue-100 text-blue-700;
-                }
-
-                .not-active {
-                    @apply text-gray-700 hover:bg-gray-200;
-                }
-
-                li {
-                    @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
-                }
-            }
-        }
-
-        .content {
-            @apply flex-1 p-8 bg-white max-w-2xl relative;
-
-            li {
-                @apply absolute flex items-center flex-col gap-3;
-
-                img {
-                    @apply object-contain object-center size-16 relative group-hover:scale-105;
-                }
-
-                p {
-                    @apply text-sm text-center font-medium w-40;
-                }
-            }
-        }
+    h3 {
+      @apply text-xs font-medium text-gray-400 mb-1;
     }
+
+    ul {
+      @apply space-y-1;
+
+      .active {
+        @apply bg-blue-100 text-blue-700;
+      }
+
+      .not-active {
+        @apply text-gray-700 hover:bg-gray-200;
+      }
+
+      li {
+        @apply flex items-center gap-2 px-3 py-2 rounded-md cursor-pointer transition-colors;
+      }
+    }
+  }
+
+  .content {
+    @apply
+      flex-1
+      bg-white
+      p-6
+      overflow-y-auto
+      flex
+      flex-wrap
+      gap-6
+      content-start;
+  }
+
+  .content li {
+    @apply
+      flex
+      flex-col
+      items-center
+      gap-3
+      w-28
+      cursor-pointer
+      rounded-md
+      p-2
+      hover:bg-gray-100
+      transition;
+  }
+
+  .content img {
+    @apply size-16 object-contain;
+  }
+
+  .content p {
+    @apply text-xs font-medium text-center w-full truncate;
+  }
+}
 
     #txtfile {
         @apply w-md absolute top-36 right-32 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
@@ -321,21 +339,107 @@
         }
     }
 
-    #home {
-        @apply relative z-0 max-sm:hidden;
 
-        ul {
-            li {
-                @apply absolute z-0 select-none flex items-center flex-col;
+#home {
+  position: relative;
+  z-index: 0;
 
-                img {
-                    @apply group-hover:bg-gray-950/10 p-1 rounded-md;
-                }
+  height:100%;
+  width: 30%;
+  padding: 2rem;
+  margin: 0;
+  overflow: visible;
+  
+}
 
-                p {
-                    @apply text-sm text-white text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-40;
-                }
-            }
-        }
-    }
+
+
+
+#home ul {
+  display: grid;
+
+  grid-auto-flow: column;
+  grid-template-rows: repeat(auto-fill, 150px);
+
+  gap: 1rem;
+  align-content: start;
+
+  height: 100%;  
+
+  overflow: visible;
+}
+
+
+
+#home ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 7rem;
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+
+
+#home ul li img {
+  width: 64px;
+  height: 64px;
+  padding: 4px;
+
+  object-fit: contain;
+  border-radius: 6px;
+
+  transition: transform 120ms ease-out,
+              background-color 120ms ease-out;
+
+  will-change: transform;
+}
+
+#home ul li:hover img {
+  transform: scale(1.05);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+
+
+#home ul li p {
+  margin-top: 4px;
+
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+
+  padding: 2px 6px;
+  border-radius: 4px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.2;
+  max-height: calc(1.4em * 2);
+
+  transition: background-color 100ms ease-out;
+}
+
+#home ul li:hover p {
+  background-color: rgb(59 130 246);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #home ul li img,
+  #home ul li p {
+    transition: none;
+  }
+}
 }
