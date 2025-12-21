@@ -4,12 +4,15 @@
     }
 
     nav {
+        img{
+
+        }
         @apply 
           fixed top-0 left-0 w-full
           z-[300]
           flex justify-between items-center
-          bg-white/50 backdrop-blur-3xl
-          p-0.5 px-5
+          bg-black/80 backdrop-blur-3xl
+        px-5
           select-none;
 
         div {
@@ -23,13 +26,21 @@
         ul {
             @apply flex items-center gap-5 max-sm:hidden;
 
-            p {
-                @apply text-sm cursor-pointer hover:underline transition-all;
-            }
+            li {
+  @apply
+    text-sm cursor-pointer
+    px-2 py-1
+    rounded-full
+    transition-colors
+    hover:bg-white/10
+    font-semibold
+    text-white
+    
+}
         }
 
         time {
-            @apply text-sm font-medium text-black;
+            @apply text-sm font-medium text-white;
         }
     }
 }

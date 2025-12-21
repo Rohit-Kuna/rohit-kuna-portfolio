@@ -103,50 +103,55 @@
     }
 
     #terminal {
-        @apply w-xl absolute top-32 left-1/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
+        @apply w-xl absolute top-32 left-1/12 bg-black text-gray-200 shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
+        /* UPDATED: Title Area */
         #window-header {
             @apply flex items-center justify-between px-4 py-3 bg-white text-black border-b border-gray-300;
         }
 
         h2 {
-            @apply font-bold text-sm text-center w-full;
+            @apply font-bold text-sm text-center w-full text-black;
+            /* background removed — header handles it */
         }
 
         .techstack {
-            @apply text-sm font-roboto p-5;
+            @apply text-sm font-roboto p-5 text-gray-300;
 
             .label {
-                @apply flex items-center ms-10 mt-7;
+                @apply flex items-center ms-10 mt-7 text-gray-400;
             }
 
             .content {
-                @apply py-5 my-5 border-y border-dashed space-y-1;
+                @apply py-5 my-5 border-y border-dashed border-gray-700 space-y-1;
 
                 li {
                     .check {
                         @apply text-[#00A154] w-5;
+                        /* keep green same */
                     }
 
                     h3 {
                         @apply font-semibold text-[#00A154] w-32 ms-5;
+                        /* keep green same */
                     }
 
                     ul {
-                        @apply flex items-center gap-3;
+                        @apply flex items-center gap-3 text-gray-300;
                     }
                 }
             }
 
             .footnote {
-                @apply text-[#00A154] space-y-1;
+                @apply space-y-1;
 
                 p {
-                    @apply flex items-center;
+                    @apply flex items-center text-[#00A154];
+                    /* keep green */
+                }
 
-                    svg {
-                        @apply w-5 me-5;
-                    }
+                svg {
+                    @apply text-[#00A154];
                 }
             }
         }
@@ -328,7 +333,7 @@
 
         ul {
             grid-template-rows: repeat(auto-fill, 150px);
-            @apply grid grid-flow-col  gap-4 content-start h-full overflow-visible;
+            @apply grid grid-flow-col gap-4 content-start h-full overflow-visible;
 
             li {
                 @apply flex flex-col items-center justify-start w-28 p-2 rounded-lg cursor-pointer select-none;

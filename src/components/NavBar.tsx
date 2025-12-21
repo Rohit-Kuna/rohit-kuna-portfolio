@@ -20,26 +20,21 @@ const Navbar = () => {
   return (
     <nav>
       <div>
-        <img src="/images/logo.svg" alt="logo" />
-        <p className="font-semibold">Rohit's Portfolio</p>
+        <img src="/images/iconapplewhite.png" className="w-8 h-8 p-2 left-0.5" alt="logo" />
+        <p className="font-semibold text-white">Rohit's Portfolio</p>
 
         <ul className="flex items-center gap-2">
-          {navLinks.map(({ id, name, type, icon: Icon }) => (
+          {navLinks.map(({ id, name, type}) => (
             <li
               key={id}
               onClick={() => toggleWindow(type as WindowKey)}
-              data-tooltip-id="nav-tooltip"
-              data-tooltip-content={name}
               aria-label={name}
-              className="relative flex items-center justify-center w-8 h-8 cursor-pointer"
-              data-tooltip-delay-show={150}
+              className="relative flex items-center justify-center cursor-pointer"
             >
-              <Icon size={14} strokeWidth={2.7} />
+              <p>{name}</p>
             </li>
           ))}
         </ul>
-
-        <Tooltip id="nav-tooltip" place="bottom" className="tooltip" />
       </div>
 
       <div>
