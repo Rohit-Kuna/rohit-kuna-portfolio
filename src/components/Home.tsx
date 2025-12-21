@@ -16,7 +16,7 @@ const Home = () => {
     <section id="home">
       <ul>
         {projects.map((project) => (
-          <li key={project.id} className="folder">
+          <li key={project.id} className="folder group">
             <img
               src="/images/folder.png"
               alt={project.name}
