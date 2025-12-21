@@ -85,12 +85,12 @@ const dockApps: DockApp[] = [
     icon: "terminal.png",
     canOpen: true,
   },
-  {
-    id: "trash",
-    name: "Archive", // was "Trash"
-    icon: "trash.png",
-    canOpen: false,
-  },
+  // {
+  //   id: "trash",
+  //   name: "Archive", // was "Trash"
+  //   icon: "trash.png",
+  //   canOpen: false,
+  // },
 ];
 
 const blogPosts : BlogPost[] = [

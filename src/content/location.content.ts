@@ -2,7 +2,7 @@ import { Location, FinderNode } from "#types/location.types";
 const WORK_LOCATION : Location = {
   id: 1,
   type: "work",
-  name: "Work",
+  name: "Projects",
   icon: "/icons/work.svg",
   kind: "folder",
   children: [
