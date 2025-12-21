@@ -46,40 +46,28 @@ const Safari = () => {
         </div>
       </div>
 
-      <div className="pr-1">
-        <div className="blog p-6 window-scroll mac-scrollbar">
-          <h2 className="text-pink-600 text-2xl font-bold mb-6">
-            My Developer Blog
-          </h2>
+      <div className="safari-content window-scroll mac-scrollbar">
+        <div className="articles-page">
+          <h2>My Articles</h2>
+          <hr />
 
-          <div className="space-y-8">
-            {blogPosts.map(({ id, image, title, date, link }) => (
-              <div
-                key={id}
-                className="blog-post flex items-center gap-4"
-              >
-                <div className="col-span-2">
-                  <img
-                    src={image}
-                    alt={title}
-                    className="w-12 h-12 object-cover"
-                  />
-                </div>
+          <div className="articles-list">
+            {blogPosts.map(({ id, icon: Icon, title, date, link }) => (
+              <div key={id} className="article-row">
+                <Icon className="article-icon" />
 
-                <div>
-                  <h3 className="font-semibold">{title}</h3>
-                  <p className="text-gray-500 text-sm">{date}</p>
-
+                <div className="article-text">
                   <a
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1"
                   >
-                    Check out the full post
-                    <MoveRight className="icon-hover" />
+                    <h3>{title}</h3>
+                    <span>{date}</span>
                   </a>
                 </div>
+
+                <MoveRight className="article-arrow" />
               </div>
             ))}
           </div>
@@ -90,7 +78,5 @@ const Safari = () => {
 };
 
 /* ---------- Wrapped Window ---------- */
-
 const SafariWindow = WindowWrapper(Safari, "safari");
-
 export default SafariWindow;

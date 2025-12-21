@@ -62,10 +62,10 @@
         @apply w-4xl absolute top-15 left-2/12 mb-30 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
         .search {
-            @apply flex items-center gap-3 w-2/3 bg-white border border-gray-300 rounded-lg px-3 py-2;
+            @apply flex items-center gap-3 w-2/3 bg-white border border-gray-300 rounded-lg px-3 py-2 min-w-0;
 
             input {
-                @apply placeholder:text-gray-400;
+                @apply placeholder:text-gray-400 min-w-0;
             }
         }
 
@@ -101,6 +101,98 @@
             }
         }
     }
+
+    /* ---------- Articles Page ---------- */
+    #safari .articles-page {
+        @apply px-10 py-4;
+    }
+
+    /* Title */
+    #safari .articles-page h2 {
+        @apply text-2xl font-semibold text-gray-900 mb-4;
+    }
+
+    /* Divider */
+    #safari .articles-page hr {
+        @apply border-gray-200 mb-6;
+    }
+
+    /* ---------- Articles List ---------- */
+    #safari .articles-list {
+        @apply space-y-6;
+    }
+
+    /* ---------- Article Row Hover ---------- */
+    /* ---------- Article Row ---------- */
+    #safari .article-row {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem;
+
+        cursor: pointer;
+        transition: background-color 0.15s ease;
+    }
+
+    /* Light Safari-style hover */
+    #safari .article-row:hover {
+        background-color: rgb(243 244 246);
+        /* gray-100 */
+    }
+
+    /* ---------- Article Icon ---------- */
+    #safari .article-icon {
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+
+        color: rgb(107 114 128);
+        /* gray-500 */
+    }
+
+    /* ---------- Text Container ---------- */
+    #safari .article-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+    }
+
+    /* Title */
+    #safari .article-text h3 {
+        font-size: 1rem;
+        font-weight: 500;
+        color: rgb(17 24 39);
+        /* gray-900 */
+    }
+
+    /* Date */
+    #safari .article-text span {
+        font-size: 0.875rem;
+        color: rgb(156 163 175);
+        /* gray-400 */
+    }
+
+    /* ---------- Arrow ---------- */
+    #safari .article-arrow {
+        margin-left: auto;
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+
+        color: rgb(156 163 175);
+        /* gray-400 */
+        transition: color 0.15s ease;
+    }
+
+    /* Arrow hover emphasis */
+    #safari .article-row:hover .article-arrow {
+        color: rgb(75 85 99);
+        /* gray-600 */
+    }
+
 
     #terminal {
         @apply w-xl absolute top-32 left-1/12 bg-black text-gray-200 shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;

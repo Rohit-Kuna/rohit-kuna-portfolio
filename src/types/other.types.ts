@@ -28,7 +28,7 @@ export type BlogPost = {
   id: number;
   date: string; // CMS date string
   title: string;
-  image: string;
+  icon: LucideIcon;
   link: string;
 };
 
