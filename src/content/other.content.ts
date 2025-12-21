@@ -68,9 +68,9 @@ const dockApps: DockApp[] = [
     canOpen: true,
   },
   {
-    id: "photos",
-    name: "Gallery", // was "Photos"
-    icon: "photos.png",
+    id: "resume",
+    name: "Resume", // was "Photos"
+    icon: "notes-icon.webp",
     canOpen: true,
   },
   {
@@ -85,6 +85,12 @@ const dockApps: DockApp[] = [
     icon: "terminal.png",
     canOpen: true,
   },
+  // {
+  //   id: "photos",
+  //   name: "Gallery", // was "Photos"
+  //   icon: "photos.png",
+  //   canOpen: true,
+  // },
   // {
   //   id: "trash",
   //   name: "Archive", // was "Trash"
