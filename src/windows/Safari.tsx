@@ -18,62 +18,90 @@ import {
 const Safari = () => {
   return (
     <>
-      <div id="window-header">
+      {/* ---------- Window Header ---------- */}
+      <div id="window-header" className="flex items-center gap-3 px-4 py-2">
         <WindowControls target="safari" />
-        <PanelLeft className="ml-10 icon" />
 
-        <div className="flex items-center gap-1 ml-5">
+        <PanelLeft className="ml-6 icon" />
+
+        <div className="flex items-center gap-1 ml-4">
           <ChevronLeft className="icon" />
           <ChevronRight className="icon" />
         </div>
 
-        <div className="flex-1 flex-center gap-3">
+        <div className="flex-1 flex items-center justify-center gap-3">
           <ShieldHalf className="icon" />
-          <div className="search">
+
+          <div className="flex items-center gap-3 w-2/3 min-w-0 bg-white border border-gray-300 rounded-lg px-3 py-2">
             <Search className="icon" />
             <input
               type="text"
               placeholder="Search or enter website name"
-              className="flex-1"
+              className="flex-1 min-w-0 bg-transparent outline-none placeholder:text-gray-400"
             />
           </div>
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-4">
           <Share className="icon" />
           <Plus className="icon" />
           <Copy className="icon" />
         </div>
       </div>
 
-      <div className="pr-1 max-h-[60vh]">
-      <div className="window-scroll mac-scrollbar">
-        <div className="articles-page">
-          <h2>My Articles</h2>
-          <hr />
+      {/* ---------- Scroll Area ---------- */}
+      <div className="pr-1">
+        <div className="px-10 py-4 max-h-[60vh] overflow-y-auto mac-scrollbar">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+            My Articles
+          </h2>
 
-          <div className="articles-list">
+          <hr className="border-gray-200 mb-6" />
+
+          {/* ---------- Article List ---------- */}
+          <div className="space-y-2">
             {blogPosts.map(({ id, icon: Icon, title, date, link }) => (
-              <div key={id} className="article-row">
-                <Icon className="article-icon" />
+              <div
+                key={id}
+                className="
+                  group
+                  flex items-center gap-4
+                  px-4 py-3
+                  rounded-md
+                  cursor-pointer
+                  transition-colors duration-150
+                  hover:bg-blue-100
+                "
+              >
+                <Icon className="w-8 h-8 shrink-0 text-blue-500" />
 
-                <div className="article-text">
+                <div className="flex-1 flex flex-col gap-0.5 min-w-0">
                   <a
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
+                    className="block"
                   >
-                    <h3>{title}</h3>
-                    <span>{date}</span>
+                    <h3 className="text-base font-medium text-gray-900 truncate">
+                      {title}
+                    </h3>
+                    <span className="text-sm text-gray-400">{date}</span>
                   </a>
                 </div>
 
-                <MoveRight className="article-arrow" />
+                <MoveRight
+                  className="
+                    ml-auto
+                    w-4 h-4 shrink-0
+                    text-gray-400
+                    transition-colors duration-150
+                    group-hover:text-gray-600
+                  "
+                />
               </div>
             ))}
           </div>
         </div>
-      </div>
       </div>
     </>
   );

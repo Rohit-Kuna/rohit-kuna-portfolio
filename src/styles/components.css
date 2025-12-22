@@ -60,17 +60,17 @@
     #safari {
         @apply w-4xl absolute top-15 left-2/12 mb-30 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
-        /* ---------- Search Bar ---------- */
-        .search {
+
+        /* .search {
             @apply flex items-center gap-3 w-2/3 min-w-0 bg-white border border-gray-300 rounded-lg px-3 py-2;
 
             input {
                 @apply flex-1 min-w-0 bg-transparent outline-none placeholder:text-gray-400;
             }
-        }
+        } */
 
-        /* ---------- Articles Page ---------- */
-        .articles-page {
+
+        /* .articles-page {
             @apply px-10 py-4;
 
             h2 {
@@ -80,28 +80,28 @@
             hr {
                 @apply border-gray-200 mb-6;
             }
-        }
+        } */
 
-        /* ---------- Articles List ---------- */
-        .articles-list {
+
+        /* .articles-list {
             @apply space-y-6;
-        }
+        } */
 
-        /* ---------- Article Row ---------- */
-        .article-row {
+
+        /* .article-row {
             @apply flex items-center gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors duration-150;
 
             &:hover {
                 @apply bg-blue-100;
             }
-        }
+        } */
 
-        /* ---------- Article Icon ---------- */
-        .article-icon {
+
+        /* .article-icon {
             @apply w-8 h-8 shrink-0 text-blue-500;
         }
 
-        /* ---------- Article Text ---------- */
+
         .article-text {
             @apply flex-1 flex flex-col gap-0.5;
 
@@ -114,14 +114,14 @@
             }
         }
 
-        /* ---------- Arrow ---------- */
+
         .article-arrow {
             @apply ml-auto w-4 h-4 shrink-0 text-gray-400 transition-colors duration-150;
         }
 
         .article-row:hover .article-arrow {
             @apply text-gray-600;
-        }
+        } */
     }
 
     #terminal {
