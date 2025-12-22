@@ -46,7 +46,8 @@ const Safari = () => {
         </div>
       </div>
 
-      <div className="safari-content window-scroll mac-scrollbar">
+      <div className="pr-1 max-h-[60vh]">
+      <div className="window-scroll mac-scrollbar">
         <div className="articles-page">
           <h2>My Articles</h2>
           <hr />
@@ -72,6 +73,7 @@ const Safari = () => {
             ))}
           </div>
         </div>
+      </div>
       </div>
     </>
   );

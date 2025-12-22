@@ -92,13 +92,13 @@
             @apply flex items-center gap-4 px-4 py-3 rounded-md cursor-pointer transition-colors duration-150;
 
             &:hover {
-                @apply bg-gray-100;
+                @apply bg-blue-100;
             }
         }
 
         /* ---------- Article Icon ---------- */
         .article-icon {
-            @apply w-8 h-8 shrink-0 text-gray-500;
+            @apply w-8 h-8 shrink-0 text-blue-500;
         }
 
         /* ---------- Article Text ---------- */

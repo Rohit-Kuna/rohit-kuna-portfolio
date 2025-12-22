@@ -181,7 +181,7 @@ const ABOUT_LOCATION : Location = {
       kind: "file",
       fileType: "img",
       position: "top-10 left-5",
-      imageUrl: "/images/adrian.jpg",
+      imageUrl: "/images/profile-photo.png",
     },
     {
       id: 2,
@@ -209,7 +209,7 @@ const ABOUT_LOCATION : Location = {
       fileType: "txt",
       position: "top-60 left-5",
       subtitle: "Meet the Developer Behind the Code",
-      image: "/images/adrian.jpg",
+      image: "/images/profile-photo.png",
       description: [
         "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
         "I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful.",
