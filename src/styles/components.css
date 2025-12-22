@@ -41,15 +41,15 @@
         @apply flex gap-2;
 
         .close {
-            @apply size-3.5 rounded-full bg-[#ff6157] cursor-pointer;
+            @apply size-4 rounded-full bg-[#ff6157] cursor-pointer hover:bg-red-800;
         }
 
         .minimize {
-            @apply size-3.5 rounded-full bg-[#ffc030];
+            @apply size-4 rounded-full bg-[#ffc030];
         }
 
         .maximize {
-            @apply size-3.5 rounded-full bg-[#2acb42] cursor-pointer;
+            @apply size-4 rounded-full bg-[#2acb42] cursor-pointer hover:bg-green-800;
         }
     }
 
@@ -127,17 +127,15 @@
     #terminal {
         @apply w-xl absolute top-32 left-1/12 bg-black text-gray-200 shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden;
 
-        /* UPDATED: Title Area */
-        #window-header {
+        /* #window-header {
             @apply flex items-center justify-between px-4 py-3 bg-white text-black border-b border-gray-300;
-        }
+        } */
 
-        h2 {
+        /* h2 {
             @apply font-bold text-sm text-center w-full text-black;
-            /* background removed — header handles it */
-        }
+        } */
 
-        .techstack {
+        /* .techstack {
             @apply text-sm font-roboto p-5 text-gray-300;
 
             .label {
@@ -150,12 +148,10 @@
                 li {
                     .check {
                         @apply text-[#00A154] w-5;
-                        /* keep green same */
                     }
 
                     h3 {
                         @apply font-semibold text-[#00A154] w-32 ms-5;
-                        /* keep green same */
                     }
 
                     ul {
@@ -169,14 +165,13 @@
 
                 p {
                     @apply flex items-center text-[#00A154];
-                    /* keep green */
                 }
 
                 svg {
                     @apply text-[#00A154];
                 }
             }
-        }
+        } */
     }
 
     #contact {
