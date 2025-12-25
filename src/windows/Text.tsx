@@ -19,7 +19,7 @@ const Text = () => {
     <>
       <div id="window-header">
         <WindowControls target="txtfile" />
-        <h3>{name}</h3>
+        <h2>{name}</h2>
       </div>
 
       <div className="pr-1">

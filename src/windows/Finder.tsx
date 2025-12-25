@@ -56,13 +56,13 @@ const Finder = () => {
     items: Array<Location | FolderNode>
   ) => (
     <div>
-      <h3>{title}</h3>
-      <ul>
+      <h3 className="text-xs font-medium text-gray-400 mb-1">{title}</h3>
+      <ul className="sidebar-tabs-container">
         {items.map((item) => (
           <li
             key={item.id}
             onClick={() => setActiveLocation(item)}
-            className={clsx(
+            className={clsx("sidebar-list-item",
               item.id === activeLocation?.id ? "active" : "not-active"
             )}
           >
@@ -98,11 +98,12 @@ const Finder = () => {
         <ul className="content">
           {activeLocation?.children.map((item) => (
             <li
+              className="content-list-item"
               key={item.id}
               onClick={() => openItem(item)}
             >
-              <img src={item.icon} alt={item.name} />
-              <p>{item.name}</p>
+              <img className="size-16 object-contain" src={item.icon} alt={item.name} />
+              <p className="text-xs font-medium text-center w-full truncate">{item.name}</p>
             </li>
           ))}
         </ul>

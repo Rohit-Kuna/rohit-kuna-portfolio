@@ -10,7 +10,7 @@ const Terminal = () => {
     <>
       <div id="window-header">
         <WindowControls target="terminal" />
-        <h2 className="text-gray-400">Tech Stack</h2>
+        <h2 className="font-bold text-sm text-center w-full text-gray-400">Tech Stack</h2>
       </div>
 
       <div className="pr-1">
@@ -28,10 +28,10 @@ const Terminal = () => {
           <ul className="content">
             {techStack.map(({ category, items }) => (
               <li key={category} className="flex items-center">
-                <Check className="check" size={20} />
-                <h3>{category}</h3>
+                <Check className="text-[#00A154] w-5" size={20} />
+                <h3 className="font-semibold text-[#00A154] w-32 ms-5">{category}</h3>
 
-                <ul>
+                <ul className="flex items-center gap-3 text-gray-300">
                   {items.map((item, i) => (
                     <li key={item}>
                       {item}
@@ -44,8 +44,8 @@ const Terminal = () => {
           </ul>
 
           <div className="footnote">
-            <p>
-              <Check size={20} /> All skills loaded successfully (100%)&nbsp;
+            <p className="flex items-center gap-3 items-center text-[#00A154]">
+              <Check size={20} /> All skills loaded successfully (100%);
               <span className="terminal-cursor"></span>
             </p>
           </div>
