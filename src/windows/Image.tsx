@@ -22,13 +22,13 @@ const Image = () => {
         <h2>{name}</h2>
       </div>
 
-      <div className="p-5 bg-white">
+      <div>
         {imageUrl && (
-          <div className="w-full">
+          <div className="p-2 bg-gray-200 flex justify-center items-center">
             <img
               src={imageUrl}
               alt={name}
-              className="w-full h-auto max-h-[70vh] object-contain rounded"
+              className="max-h-[70vh] w-auto object-contain object-center rounded"
             />
           </div>
         )}

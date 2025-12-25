@@ -17,7 +17,7 @@ const Resume = () => {
   return (
     <>
     
-      <div id="window-header">
+      <div id="window-header" className="font-bold text-sm text-center flex-1">
         <WindowControls target="resume" />
         <h2>Resume.pdf</h2>
 

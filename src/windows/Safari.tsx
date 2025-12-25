@@ -32,12 +32,12 @@ const Safari = () => {
         <div className="flex-1 flex items-center justify-center gap-3">
           <ShieldHalf className="icon" />
 
-          <div className="flex items-center gap-3 w-2/3 min-w-0 bg-white border border-gray-300 rounded-lg px-3 py-2">
+          <div className="search">
             <Search className="icon" />
             <input
               type="text"
               placeholder="Search or enter website name"
-              className="flex-1 min-w-0 bg-transparent outline-none placeholder:text-gray-400"
+              className="search-input-box"
             />
           </div>
         </div>
@@ -59,19 +59,11 @@ const Safari = () => {
           <hr className="border-gray-200 mb-6" />
 
           {/* ---------- Article List ---------- */}
-          <div className="space-y-2">
+          <div className="articles-list">
             {blogPosts.map(({ id, icon: Icon, title, date, link }) => (
               <div
                 key={id}
-                className="
-                  group
-                  flex items-center gap-4
-                  px-4 py-3
-                  rounded-md
-                  cursor-pointer
-                  transition-colors duration-150
-                  hover:bg-blue-100
-                "
+                className="article-row"
               >
                 <Icon className="w-8 h-8 shrink-0 text-blue-500" />
 

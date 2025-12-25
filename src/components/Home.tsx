@@ -24,14 +24,15 @@ const Home = () => {
   return (
 
     <section id="home">
-      <ul>
+      <ul className="folder-grid-container">
         {projects.map((project) => (
-          <li key={project.id} className="folder group" onClick={()=>handleOpenProjectFinder(project)}>
+          <li className="folder group object" key={project.id} onClick={()=>handleOpenProjectFinder(project)}>
             <img
               src="/images/folder.png"
               alt={project.name}
+              className="folder-icon"
             />
-            <p>{project.name}</p>
+            <p className="folder-title">{project.name}</p>
           </li>
         ))}
       </ul>
